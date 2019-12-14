@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace DAWOO.Models
 {
@@ -18,6 +19,10 @@ namespace DAWOO.Models
         public string UserId { get; set; }
 
         public virtual Category Category { get; set; }
+
+        public IEnumerable<SelectListItem> Categories { get; set; }
+
+        public virtual ApplicationUser User { get; set; }
 
         public class PhotoDBContext : DbContext
         {
